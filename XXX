@@ -1,0 +1,148 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 20 14:21:33 2021
+
+@author: 2104998693
+"""
+import pandas as pd
+
+Jul21 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2021\07. Julho\22.07.2021 Fechamento Regulatório.xlsx',sheet_name=('Base Fechamento'),header=1)
+Jul21['LINHA'] = "07/01/2021"
+Jul21['LINHA'] = pd.to_datetime(Jul21['LINHA'])
+Jul21.dropna(how='all')
+
+Jun21 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2021\06. Junho\21.06.2021 Fechamento Regulatório.xlsx',sheet_name=('Base Fechamento'),header=1)
+Jun21['LINHA'] = "06/01/2021"
+Jun21['LINHA'] = pd.to_datetime(Jun21['LINHA'])
+Jun21.dropna(how='all')
+
+Mai21 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2021\05. Maio\23.05.2021 Fechamento Regulatório.xlsx',sheet_name=('Base Fechamento'),header=1)
+Mai21['LINHA'] = "05/01/2021"
+Mai21['LINHA'] = pd.to_datetime(Mai21['LINHA'])
+Mai21.dropna(how='all')
+
+Abr21 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2021\04. Abril\22.04.2021 Fechamento Regulatório.xlsx',sheet_name=('Base Fechamento'),header=1)
+Abr21['LINHA'] = "04/01/2021"
+Abr21['LINHA'] = pd.to_datetime(Abr21['LINHA'])
+Abr21.dropna(how='all')
+
+Mar21 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2021\03. Março\19.03.2021 Fechamento Regulatório.xlsx',sheet_name=('Base Fechamento'),header=1)
+Mar21['LINHA'] = "03/01/2021"
+Mar21['LINHA'] = pd.to_datetime(Mar21['LINHA'])
+Mar21.dropna(how='all')
+
+Mar21.rename(
+    columns=({'Cadastro':'DATACADASTRO'}), 
+    inplace=True,)
+
+Fev21 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2021\02. Fevereiro\22.02.2021 Fechamento Regulatório fevereiro.xlsx',sheet_name=('Fechamento Regulatório'),header=3)
+Fev21['LINHA'] = "02/01/2021"
+Fev21['LINHA'] = pd.to_datetime(Fev21['LINHA'])
+Fev21.dropna(how='all')
+
+Fev21.rename(
+    columns=({'Cadastro':'DATACADASTRO','Novos':'NOVOS', 'Encerrados':'ENCERRADOS', 'Estoque':'ESTOQUE', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001'}), 
+    inplace=True,)
+
+Jan21 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2021\01. Janeiro\15.01 REGULATÓRIO - Fechamento 15.01.xlsx',sheet_name=('Fechamento Regulatório'),header=5)
+Jan21['LINHA'] = "01/01/2021"
+Jan21['LINHA'] = pd.to_datetime(Jan21['LINHA'])
+Jan21.dropna(how='all')
+
+Jan21.rename(
+    columns=({'Cadastro':'DATACADASTRO','novos':'NOVOS', 'encerrados':'ENCERRADOS', 'estoque':'ESTOQUE', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001'}), 
+    inplace=True,)
+
+Dez20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\Fechamento Consolidado REGULATÓRIO Dezembro 2020 NOVA MÉDIA -  USAR ESTE (1).xlsx',sheet_name=('Fechamento'),header=3)
+Dez20['LINHA'] = "12/01/2020"
+Dez20['LINHA'] = pd.to_datetime(Dez20['LINHA'])
+Dez20.dropna(how='all')
+
+Dez20.rename(
+    columns=({'Cadastro':'DATACADASTRO','NOVO':'NOVOS', 'ENCERRADO':'ENCERRADOS',  'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001'}), 
+    inplace=True,)
+
+Nov20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\Fechamento Consolidado REGULATÓRIO Novembro 2020 (3).xlsx',sheet_name=('Fechamento'),header=3)
+Nov20['LINHA'] = "11/01/2020"
+Nov20['LINHA'] = pd.to_datetime(Nov20['LINHA'])
+Nov20.dropna(how='all')
+
+Nov20.rename(
+    columns=({'Cadastro':'DATACADASTRO', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001'}), 
+    inplace=True,)
+
+Out20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\Fechamento Consolidado REGULATÓRIO Outubro 2020 (1).xlsx',sheet_name=('Fechamento'),header=3)
+Out20['LINHA'] = "10/01/2020"
+Out20['LINHA'] = pd.to_datetime(Out20['LINHA'])
+Out20.dropna(how='all')
+
+Out20.rename(
+    columns=({'Cadastro':'DATACADASTRO', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001','ESTOQUES':'ESTOQUE'}), 
+    inplace=True,)
+
+Set20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\Fechamento Consolidado REGULATÓRIO Setembro 2020 (2).xlsx',sheet_name=('Fechamento'),header=3)
+Set20['LINHA'] = "09/01/2020"
+Set20['LINHA'] = pd.to_datetime(Set20['LINHA'])
+Set20.dropna(how='all')
+
+Set20.rename(
+    columns=({'Cadastro':'DATACADASTRO', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001'}), 
+    inplace=True,)
+
+Ago20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\Fechamento regulatório_Consolidado_Agosto_ V2 OK (1).xlsx',sheet_name=('Fechamento'),header=3)
+Ago20['LINHA'] = "08/01/2020"
+Ago20['LINHA'] = pd.to_datetime(Ago20['LINHA'])
+Ago20.dropna(how='all')
+
+Ago20.rename(
+    columns=({'Cadastro':'DATACADASTRO', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001'}), 
+    inplace=True,)
+
+Jul20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\Cópia de REGULATÓRIO - Relatório Fechamento - IDS 2913 e 2944 - 29-07-2020_JULHO.xlsx',sheet_name=('Exportar Planilha'),header=4)
+Jul20['LINHA'] = "07/01/2020"
+Jul20['LINHA'] = pd.to_datetime(Jul20['LINHA'])
+Jul20.dropna(how='all')
+
+Jul20.rename(
+    columns=({'Cadastro':'DATACADASTRO', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001'}), 
+    inplace=True,)
+
+Jun20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\FECHAMENTO_REGULATORIO_JUNHO_20.xlsx',sheet_name=('BASE'),header=5)
+Jun20['LINHA'] = "06/01/2020"
+Jun20['LINHA'] = pd.to_datetime(Jun20['LINHA'])
+Jun20.dropna(how='all')
+
+Jun20.rename(
+    columns=({'Cadastro':'DATACADASTRO', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001', 'ENCERRADO':'ENCERRADOS', 'ID':'ID PROCESSO'}), 
+    inplace=True,)
+
+Mai20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\FECHAMENTO_MAIO20_REGULATÓRIO.xlsx',sheet_name=('Fechamento'),header=5)
+Mai20['LINHA'] = "05/01/2020"
+Mai20['LINHA'] = pd.to_datetime(Mai20['LINHA'])
+Mai20.dropna(how='all')
+
+Mai20.rename(
+    columns=({'Cadastro':'DATACADASTRO', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001', 'ENCERRAMENTOS':'ENCERRADOS', 'ID':'ID PROCESSO', 'STATIS )M-1)':'STATUS (M-1)'}), 
+    inplace=True,)
+
+Abr20 = pd.read_excel(r'Z:\01 PLANEJ FINANCEIRO JURIDICO\137.ANALYTICS\3 Prévias\2020\Regulatório\FECHAMENTO_ABRIL20_REGULATÓRIO.xlsx', sheet_name=('Fechamento'),header=3)
+Abr20['LINHA'] = "04/01/2020"
+Abr20['LINHA'] = pd.to_datetime(Abr20['LINHA'])
+Abr20.dropna(how='all')
+
+Abr20.rename(
+    columns=({'Cadastro':'DATACADASTRO', 'SOCIO: Correção (M-1)':'SOCIO: Correção (M-1)_0001','EMPRESA: Correção (M-1)':'EMPRESA: Correção (M-1)_0001', 'ENCERRADOS ':'ENCERRADOS', 'Correção (M-1).1':'Correção  (M-1)'}), 
+    inplace=True,)
+
+pdList = [Jul21, Jun21, Mai21, Abr21, Mar21, Fev21, Jan21, \
+          Abr20, Mai20, Jun20, Jul20, Ago20, Set20, Out20, Nov20, Dez20]  # List of your dataframes
+new_df = pd.concat(pdList,ignore_index=True)
+
+new_df.rename(
+    columns=({ 'LINHA': 'Data'}), 
+    inplace=True,)
+
+remove_cols = [col for col in new_df.columns if 'Unnamed' in col]
+new_df.drop(remove_cols,axis='columns',inplace=True)
+
+new_df.to_excel('Teste Reg.xlsx', index=False)
